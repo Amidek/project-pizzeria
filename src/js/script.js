@@ -267,10 +267,10 @@
       });
     }
     add(menuProduct) {
-       const thisCart = this;
-       const generatedHTML = templates.cartProduct(menuProduct);
-       const generatedDom = utils.createDOMFromHTML(generatedHTML);
-       thisCart.dom.productList.appendChild(generatedDom);
+      const thisCart = this;
+      const generatedHTML = templates.cartProduct(menuProduct);
+      const generatedDom = utils.createDOMFromHTML(generatedHTML);
+      thisCart.dom.productList.appendChild(generatedDom);
       console.log('adding product', menuProduct);
     }
   }
