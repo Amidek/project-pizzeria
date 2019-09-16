@@ -10,6 +10,7 @@ class Cart {
     thisCart.getElements(element);
     thisCart.initActions();
   }
+
   getElements(element) {
     const thisCart = this;
     thisCart.dom = {};
@@ -24,13 +25,18 @@ class Cart {
       thisCart.dom[key] = thisCart.dom.wrapper.querySelectorAll(select.cart[key]);
     }
   }
+
   remove(cartProduct) {
     const thisCart = this;
     const index = thisCart.products.indexOf(cartProduct);
     thisCart.products.splice(index, 1);
     cartProduct.dom.wrapper.remove();
+    if (thisCart.products.length == 0) {
+    //  console.log(thisCart.products);
+    }
     thisCart.update();
   }
+
   add(menuProduct) {
     const thisCart = this;
     const generatedHTML = templates.cartProduct(menuProduct);
@@ -39,6 +45,7 @@ class Cart {
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
     thisCart.update();
   }
+
   update() {
     const thisCart = this;
     thisCart.totalNumber = 0;
@@ -54,6 +61,7 @@ class Cart {
       }
     }
   }
+
   sendOrder() {
     const thisCart = this;
     const url = settings.db.url + '/' + settings.db.order;
@@ -66,10 +74,8 @@ class Cart {
       deliveryFee: thisCart.deliveryFee,
       products: [],
     };
-
     for (let product of thisCart.products) {
       payload.products.push(product.getData());
-      console.log('product', product);
     }
     const options = {
       method: 'POST',
@@ -86,6 +92,7 @@ class Cart {
         console.log('parsedResponse', parsedResponse);
       });
   }
+
   initActions() {
     const thisCart = this;
     thisCart.dom.productList.addEventListener('updated', function() {
