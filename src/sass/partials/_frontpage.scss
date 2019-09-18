@@ -1,0 +1,110 @@
+.main-container {
+  height: 1250px;
+  margin-top: 40px;
+  border-radius: $radius;
+  background-color: $color-light;
+}
+
+.first-row {
+  @include flex(row, flex-start, center);
+}
+
+.order .button-first-row {
+  background-image: url('/images/assets/pizza-1.jpg');
+  background-size: 300px 120px;
+}
+
+.booking .button-first-row {
+  background-image: url('/images/assets/pizza-2.jpg');
+  margin-left: 6px;
+}
+
+.button-first-row {
+  border-color: $color-light;
+  background-color: $color-dark;
+  color: $color-light;
+  font-family: $font-header;
+  border-radius: $radius;
+  margin-top: 50px;
+  width: 295px;
+  height: 120px;
+  padding: 0;
+  letter-spacing: -0.50px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 0;
+    line-height: 70px;
+    font-size: 26px;
+    transition: all 1s ease-in-out;
+  }
+
+  p {
+    font-size: $base-size;
+    font-family: $font-text;
+    font-weight: 400;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  &:hover {
+    h1 {
+      color: $color-light;
+      line-height: 40px;
+    }
+
+    p {
+      color: $color-light;
+      line-height: 40px;
+      opacity: 1;
+    }
+  }
+}
+
+.second-row {
+  @include flex(row, flex-start, center);
+  margin-top: 6px;
+}
+
+.open-hours {
+  background-color: $color-main;
+  border-radius: $radius;
+  font-family: $font-header;
+  color: $color-light;
+  text-align: center;
+  margin: 0;
+  width: 595px;
+  height: 120px;
+
+  h1 {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-family: $font-text;
+    font-size: $base-size;
+    font-weight: $font-light;
+    margin-top: 0;
+  }
+}
+
+.footer {
+  margin-top: 10px;
+}
+
+.footer a{
+  font-family: $font-text;
+  font-size: $base-size;
+  font-weight: $font-normal;
+  margin-left: 30px;
+  padding-bottom: 40px;
+  color: $color-main;
+  line-height: 25px;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
