@@ -90,6 +90,143 @@
   }
 }
 
+.third-row {
+  @include flex(row, flex-start, center);
+  margin-top: 100px;
+  margin-left: 15px;
+}
+
+.image {
+  background-image: url("/images/assets/pizza-3.jpg");
+  width: 195px;
+  height: 195px;
+  background-size: cover;
+  border-radius: $radius;
+}
+
+
+.slider {
+  margin: 50px auto;
+  width: 660px;
+  display: inline-flex;
+}
+
+.slide-frame {
+  height: 200px;
+  width: 660px;
+  overflow: hidden;
+}
+
+.quotes {
+  height: 200px;
+  width: 450px;
+  overflow: hidden; /*ukrywamy wszystko, co wystaje po za prostokąt 600x400px*/
+  position: relative; /* "#slajdy" będzie naszym kontekstem pozycjonującym, dla poszczególnych slajdów*/
+
+  li {
+    list-style: none;
+  }
+}
+
+.quote-title, .quote-content, .quote-author {
+  color: $color-dark;
+  font-family: $font-text;
+  font-size: $base-size*1.2;
+}
+
+.quote-title {
+  padding-top: 15px;
+  font-weight: $font-bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.quote-content {
+  font-weight: $font-normal;
+  line-height: 23px;
+}
+
+.quote-author {
+  padding-bottom: 30px;
+  font-style: italic;
+  line-height: 23px;
+}
+
+
+.nawigacja {
+  margin: 5px 0 0 0;
+  text-align: center;
+  z-index: 10;
+  margin-top: -30px;
+}
+
+.nawigacja a {
+  display: inline-block;
+  padding: 2px 6px;
+  color: $color-dark;
+  -webkit-transition: all linear .1s;
+  -moz-transition: all linear .1s;
+  -o-transition: all linear .1s;
+  transition: all linear .1s;
+}
+
+.nawigacja a:hover {
+  background: #D258A7;
+}
+
+.gallery-first-row {
+  margin-top: 30px;
+}
+
+.gallery-first-row, .gallery-second-row {
+  @include flex(row, flex-start, center);
+
+  img {
+    width: 195px;
+    height: 195px;
+    margin: 5px;
+    border-radius: $radius;
+  }
+}
+
+.image-gallery {
+  position: relative;
+  @include flex(row, flex-start, center);
+}
+
+.image-gallery img {
+  -webkit-filter: brightness(100%);
+}
+
+.image-gallery:hover {
+  img {
+    -webkit-filter: brightness(50%);
+    transition: $transition;
+  }
+
+  .icon {
+    opacity: 1;
+  }
+}
+
+.icon {
+  top: 40%;
+  font-size: 20px;
+  color: $color-light;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.cookie {
+  color: $color-light;
+  transition: $transition;
+
+  &:hover {
+    color: $color-main;
+  }
+}
+
 .footer {
   margin-top: 10px;
 }

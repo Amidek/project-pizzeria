@@ -106,7 +106,7 @@ class Booking {
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application.json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
     };
@@ -169,7 +169,7 @@ class Booking {
       if(!isNaN(tableId)) {
         tableId = parseInt(tableId);
       }
-      if(
+      if (
         !allAvailable
         &&
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
