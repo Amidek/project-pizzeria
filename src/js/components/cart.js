@@ -32,9 +32,9 @@ class Cart {
     thisCart.products.splice(index, 1);
     cartProduct.dom.wrapper.remove();
     if (thisCart.products.length == 0) {
-    //  console.log(thisCart.products);
-    }
+      thisCart.deliveryFee = 0; }
     thisCart.update();
+    thisCart.deliveryFee = 20;
   }
 
   add(menuProduct) {

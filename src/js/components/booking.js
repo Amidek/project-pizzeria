@@ -10,6 +10,7 @@ class Booking {
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
+    thisBooking.initActions();
   }
 
   getData() {
@@ -110,10 +111,13 @@ class Booking {
       },
       body: JSON.stringify(payload),
     };
-    fetch(url, options)
-      .then(function(response) {
-        return response.json();
-      });
+
+    return new Promise((res) => {
+      fetch(url, options)
+        .then(function(response){
+          res(response.json());
+        });
+    });
   }
 
   parseData(bookings, eventsCurrent, eventsRepeat) {
