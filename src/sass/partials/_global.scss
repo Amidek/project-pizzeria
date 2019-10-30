@@ -10,6 +10,8 @@ body {
   line-height: 1.7;
   font-weight: $font-normal;
   color: $color-dark;
+  background-image: url("/images/assets/bodyimage.jpg");
+  background-size: cover;
 }
 
 .container {

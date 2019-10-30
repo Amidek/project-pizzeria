@@ -2,6 +2,8 @@
   padding: ($base-size * 5) 0 ($base-size * 8) 0;
   background: $color-dark;
   color: $color-light;
+  background-image: url("/images/assets/background.jpeg");
+  background-size: contain;
 
   &__wrapper {
     position: relative;
@@ -15,11 +17,14 @@
 
   &__title {
     margin: 0 0 $base-size 0;
-    font-size: ($base-size * 4);
+    font-size: ($base-size * 5);
     font-family: $font-header;
     font-weight: $font-light;
     text-transform: uppercase;
-
+    background: -webkit-linear-gradient(yellow, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
     span {
       font-weight: $font-bold;
     }

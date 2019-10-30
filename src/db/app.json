@@ -46,6 +46,48 @@
       }
     },
     {
+      "id":"cookie",
+      "name": "Cookie",
+      "price": 6,
+      "description": "Great chocko snack with fruity toppings",
+      "images": [
+        "<img class=\"active\" src=\"images/cookie/cookie.png\">",
+        "<img class=\"active strawberries\" src=\"images/cookie/Strawberries.png\">",
+        "<img class=\"active blueberries\" src=\"images/cookie/blueberry.png\">"
+      ],
+      "params": {
+        "sauce": {
+          "label": "Sauce",
+          "type": "radios",
+          "options": {
+            "dry": {
+              "label": "Dry",
+              "price": 0,
+              "default": true
+            },
+            "cream": {
+              "label": "whipped cream",
+              "price": 2
+            }
+          }
+        },
+        "toppings": {
+          "label": "Toppings",
+          "type": "checkboxes",
+          "options": {
+            "strawberries": {
+              "label": "Strawberries",
+              "price": 2
+            },
+            "blueberries": {
+              "label": "Blueberries",
+              "price": 2
+            }
+          }
+        } 
+      }
+    },
+    {
       "id": "pizza",
       "name": "Nonna Alba's Pizza",
       "price": 20,
